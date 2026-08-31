@@ -1,454 +1,657 @@
-
+/* TASTE HAVEN MAIN STYLESHEET */
+/* REMOVES THE BROWSER'S DEFAULT MARGIN FROM EVERY ELEMENT ON THE PAGE */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-/* Website colour variables */
-:root{
-    --primary:#38BDF8;
-    --secondary:#0284C7;
-    --white:#FFFFFF;
-    --light:#F8FAFC;
-    --dark:#1F2937;
-    --accent:#F59E0B;
+
+:root {
+    --primary-color:#0284c7;
+    --primary-dark: #0369a1;
+    --text-color: #334155;
+    --white: #ffffff;
+    --background-color:#f8fafc;
 }
-/* Smooth scrolling */
+
+/* SMOOTH SCROLLING MAKES LINKS AND OTHER SCROLLING ACTIVITIES MOVE SMOOTHLY
+  INSTEAD OF JUMPING INSTANTLY TO A LOCATION */
 
 html{
     scroll-behavior:smooth;
 }
 
-/* Body styles */
+/* CONTROL THE APPEARANCE OF THE WEBPAGE BODY */
+
 body{
     font-family:'Poppins',sans-serif;
-    background:var(--white);
-    color:var(--dark);
-    line-height:1.7;
+    background-color: var(--background-color);
+    color:var(--text-color);
+    line-height:1.6;
 }
-/* Makes images responsive */
+
+/* Makes images responsive and removes the small unwanted space that can appear underneath images  */
 
 img{
-    width:100%;
     display:block;
+    max-width:100%;
 }
-/* Removes underline */
 
-a{
-    text-decoration:none;
+/* Removes the browser's default underline from links */
+a {
+    text-decoration: none;
 }
-/* Removes bullets */
 
-ul{
-    list-style:none;
+/* Removes the default bullets from unordered lists */
+ul {
+    list-style-type: none;
 }
-/* Reusable container */
 
-.container{
+/* Creates a reusable container that keeps website content from stretching across the entire screen */
+.container {
     width:90%;
-    max-width:1200px;
-    margin:auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Gives every major section consistent vertical spacing */
+section {
+    padding: 80px 0;
+}
+
+/* HEADER */
 .header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#ffffff;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.nav-container{
+/* Keeps the logo and navigation on the same horizontal row */
+.nav-container {
+    min-height: 80px;
     display:flex;
+    align-items: center;
     justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
 }
 
-.logo{
-    font-size:2rem;
+/* Styles the Taste Haven Restaurant logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Gives the Haven part of the logo a different color */
+.logo span {
+    color:#f59e0b;
+}
+
+/* Places the navigation links beside one another */
+.nav-links {
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Styles each individual navigation link */
+.nav-links a {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Changes the navigation link color when the mouse moves over the link. */
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Highlights the page the visitor is currently viewing */
+.nav-links a.active {
+    color: var(--primary-color);
     font-weight:700;
-    color:var(--secondary);
 }
 
-.logo span{
-    color:var(--accent);
-}
-
-.nav-links{
+/* Hero Section GET AN IMAGE FOR THE HERO SECTION THAT IS NOT ME */
+.hero {
+    min-height: 80vh;
+    background-image: url("Chef.jpeg");
+    background-size: cover;
+    background-position: center;
     display:flex;
-    gap:35px;
+    align-items: center;
+    position: relative;
 }
 
-.nav-links a{
-    color:var(--dark);
-    font-weight:500;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
-}
-
-.active{
-    color:var(--primary)!important;
-}
-
-.hero{
-    height:90vh;
-    background-image:
-    linear-gradient(
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.55)),
-    url("../images/hero/hero.jpg");
-    background-size:cover;
-    background-position:center;
+/* Dark Overlay over the background image */
+.hero-overlay{
+    width: 100%;
+    min-height 80vh;
     display:flex;
-    align-items:center;
+    align-items: center;
+    background: rgba(0,0,0,0.45);
 }
 
+/* Hero content */
 .hero-content{
-    max-width:700px;
-    color:white;
+    position:relative;
+    z-index: 1;
+    max-width: 650px;
 }
 
+/* Hero Heading */
 .hero-content h1{
-    font-size:4rem;
-    margin-bottom:20px;
-    line-height:1.2;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 20px;
 }
 
-.hero-content p{
-    font-size:1.2rem;
-    margin-bottom:35px;
+/* Hero Paragraph */
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom:30px;
+    max-width:550px;
 }
 
+/* Hero Buttons */
 .hero-buttons{
+    display: flex;
+    gap: 15px;
+}
+
+/* Buttons  */
+.hero buttons .btn {
+    display: inline-block;
+    padding:12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Primary button */
+.hero-buttons .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Primary Button Hover */
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Secondary Button */
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white)
+}
+
+/* Secondary Button Hover */
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--text-color)
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+nav{
     display:flex;
-    gap:20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 6%;
+    background-color: var(--white);
 }
-
-.btn{
-    padding:15px 35px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
 }
-
-.btn-primary{
-    background: var(--primary);
-    color: white;
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color:var(--primary-color);
+    text-decoration: none;
 }
-
-.btn-primary{
-    background:var(--primary);
-    color:white;
+.hero{
+    min-height: 80vh;
+    display:flex;
+    align-items: center;
+    padding: 80px 6%;
 }
-
-.btn-primary:hover{
-background: var(--secondary);
+.hero{
+    min-height: 80vh;
+    display:flex;
+    align-items: center;
+    padding: 80px 6%;
+    background-image: url("PUT A FOOD IMAGE HERE/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
-
-.btn-secondary{
-    background:var(--secondary);
+/* Dark Overlay over the background image */
+.hero::before {
+    content:"";
+    position: aboslute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
 }
-
-.btn-secondary:hover{
-    background:var(--secondary);
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width:650px;
 }
-
-.btn-secondary{
-    background: white;
-    color:var(--secondary);
+/* Main Hero Heading */
+.hero-content h1{
+    font-size: 3.5rem;
+    line-height:1.1;
+    color: var(--white);
+    margin-bottom:20px;
 }
-
-.btn-secondary:hover{
-    background:var(--light);
+/* Hero Paragraph */
+.hero-content p {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 30px;
+    max-width:550px;
 }
-
-.stats{
-    padding:80px 0;
-    background:var(--light);
-}
-
-.stats-grid{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:25px;
-}
-
-.stat-card{
-    background: white ;
-    padding: 35px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.06);
-    transition: 3s;
-}
-
-.stat-card:hover{
-    transform:translateY(-8px)
-}
-
-.stat-card h2{
-    color:(var(--primary));
-    font-size: 2.6rem;
-}
-
-.stat-card p{
+/* hero buttons */
+.hero-buttonns {
+    display:flex;
+    align-items: center;
+    gap: 15px;
     margin-top:10px;
 }
 
-/* ===============================
-   CHEF SECTION
-================================ */
-
-.chef{
-    padding:100px 0;
+/* Base styling shared by both buttons */
+.her-buttons .btn {
+    display:inline-block;
+    padding: 13px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight:600;
+    transition: all 0.3s ease;
 }
-.chef-container{
+
+/* Primary button- Reserve a table */
+.hero-buttons .btn-primary {
+    background-color:var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color:var(--primary-dark);
+}
+
+/* Secondary button - Explore Our Menu */
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color:var(--white);
+    border: 2px solid var(--white);
+}
+
+.hero-buttoms .btn-secondary:hover{
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+/* RESTAURANT STATISTICS */
+.stats {
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:60px;
-    align-items: center;
-}
-.chef-image img{
-    border-radius:20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,.1);
-}
-.section-tag{
-    display: inline-block;
-    color:var(--secondary);
-    font-weight: 600;
-    margin-bottom:15px;
-}
-.chef-content h2{
-    font-size:2.5rem;
-    margin-bottomm:25px;
-}
-
-/* ===============================
-   TESTIMONIALS
-================================ */
-
-.testimonials{
-    padding:100px 0;
-    background:var(--light);
-}
-.testimonial-grid{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 30px
-}
-.testimonial-card{
-    background:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.07);
-    transition:.3s;
-}
-.testimonial-card:hover{
-    transform: translateY(-8px);
-}
-.stars{
-    color:gold;
-    font-size:1.3rem;
-    margin-bottom:20px;
-}
-
-/* ===============================
-   CTA
-================================ */
-.cta{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
-    text-align: center;
-    padding:90px 20px;
-}
-.cta h2{
-    font-size: 2.7rem;
-    margin-bottom:20px;
-}
-.cta p{
-    max-width:700px;
-    margin:0 auto 35px;
-}
-
-/* ===============================
-   FOOTER
-================================ */
-footer{
-    background:#0F172A;
-    color:white;
-    padding-top:70px;
-}
-.footer-grid{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:40px;
-    padding-bottom:50px;
-}
-.footer_grid h3{
-margin-bottom:20px;
-}
-.footer-grid ul li{
-    margin-bottom:12px;
-}
-.footer-grid a{
-    color: white;
-}
-.footer-grid a:hover{
-    color:var(--primary);
-}
-.copyright{
-    text-align: center;
-    boreder-top: 1px solid rgba(255,255,255,.15);
-    padding 25px;
-}
-
-
-/* =====================================================
-   CHEF SECTION
-====================================================== */
-
-
-
-chef{
-    background:var(--light) ;
-}
-.chief-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items: center;
-}
-.chef-image{
-    overflow:hidden;
-    border-radius:20px;
-}
-chef-image img{
-    border-radius:20px;
-    transition:4s;
-}
-.chef-image:hover img{
-    transform:scale(1.05);
-}
-.chef-content h2{
-    margin:20px 0;
-}
-.chef-content p{
-    margin-bottom:20px;
-}
-
-
-/* =====================================================
-   STATISTICS
-====================================================== */
-.statistics{
-    background:var(--primary);
-    color:white;
-}
-.stats-grid{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap:30px;
-}
-.stat-card{
+    padding: 60px 6%;
+    background-color: var(--white);
     text-align:center;
 }
-.stat-card h2{
-    font-size:3rem;
-    color:white;
-    margin-bottom: 10px;
-}
-.stat-card p{
-    color:white;
+
+/* Individual Statistic */
+.stat{
+    padding: 20px;
 }
 
-/* =====================================================
-   TESTIMONIALS
-====================================================== */
-
-.testimonials{
-    background:white;
-}
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-.testimonial-card{
-    background:var(--light);
-    padding:35px;
-    border-radius:18px;
-    box-shadow:var(shadow-sm);
-    transition:.3s;
-}
-.testimonial-card:hover{
-    transform:translateY(-8px);
-}
-.stars{
-    color:gold;
-    font-size:1.3rem;
-    margin-bottom:20px;
-}
-.testimonial-card h4{
-    margin-top:20px;
-    color:var(--primary-dark);
+/* Large statistic number */
+.stat h3 {
+    font-size: 2.5rem;
+    color:var(--primary-color);
+    margin-bottom: 8px;
 }
 
-/* =====================================================
-   CTA
-====================================================== */
-.cta{
-    background:var(--primary-dark);
-    color:white;
-    text-align:center;
-}
-.cta h2{
-    color:white;
-    margin-bottom:20px;
-}
-.cta p{
-    color:white;
-    max-width:650px;
-    margin: 0 auto 35px;
+/* Statistic Description */
+.stat p {
+    font-size: 0.95rem;
+    color: var(--text-color);
 }
 
-/* =====================================================
-   FOOTER
-====================================================== */
-.footer{
-    background-color:#1F2937;
-    color:white;
-    padding-top:80px;
-}
-.footer-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-}
-.footer h3{
-    margin-bottom:20px;
-}
-.footer p{
-    color:#CBD5E1;
-}
-.footer ul li{
-    margin-bottom: 12px;
-}
-.footer a{
-    color: #CBD5E1;
-    transition:.3s;
-}
-.footer a:hover{
-    color:var(--primary);
-}
-/* 
+/* my stats are not displaying properly. IT should display left to right */
+/* FEATURED NIGERIAN DISHES */
+    .featured-meals {
+        padding: 5rem 0;
+        background-color: var(--background-color);
+    }
+
+    /* FEATURED MEALS TITLE */
+    .section-title{
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+    }
+    .section-title h2{
+        margin-bottom: 1rem;
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    .section-title p {
+        margin: 0;
+        color: var(--text-color);
+        line-height: 1.7;
+    }
+
+    /* THE MEAL */
+    .meal-grid{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* MEAL CARD */
+    .meal-card{
+        background-color: var(white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow:0 4px 10px rgba(0, 0, 0, 08);
+        transition:transform 0.3s ease, box shadow 0.3s ease;
+    }
+    .meal-card:hover{
+        transform: translate(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* MEAL CARD IMAGE */
+    .meal-card img{
+        width:100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* MEAL CONTENT */
+    .category {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+        font-weight:600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--primary-color);
+    }
+
+    /* MEAL TITLE */
+    .meal-content h3{
+        margin-bottom: 0.75rem;
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    /* MEAL DESCRIPTION */
+    .meal-content p{
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    /* MEAL FOOTER */
+    .meal-footer{
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+        gap: 1rem;
+    }
+
+    /* SMALL MEAL BUTTON */
+    .btn-small{
+        display:inline-block;
+        padding:0.6rem 1rem;
+        background-color: var(--primary-color);
+        color: var(white);
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--background-color)0.3s ease;
+    }
+    .btn-small:hover{
+        background-color: var(--primary-dark);
+    }
+    /* WHY CHOOSE US SECTION */
+    .features {
+        padding: 5rem 0;
+        background-color: var(--white);
+    }
+
+    /* FEATURED GRID */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* FEATURE ITEM */
+    .feature {
+        text-align:center;
+        padding:2rem;
+    }
+    .feature h3{
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+    .feature p {
+        margin-bottom: 1.25rem;
+        font-size: 2.5rem;
+    }
+    
+    /* CHEF'S MESSAGE SECTION */
+    .chef-message{
+        padding: 5rem 0;
+        background-color: var(--background-color);
+    }
+    
+    /* CHEF GRID */
+    .chef-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    /* CHEF IMAGE */
+    .chef-image img{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+    
+    /* SECTION LABEL */
+    .section-label{
+        display:inline-block;
+        margin-bottom: 0.75rem;
+        color: var(--primary-color);
+        font-size: 0.8rem;
+        font-weight:600;
+        color: var(--primary-dark);
+    }
+    .testimonials {
+        padding:5rem 0;
+        background-color: var(--background-color);
+    }
+
+    /* TESTIMONIALS GRID */
+    .testimonials-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* TESIMONIAL CARD */
+    .testimonial-card {
+        padding: 2rem;
+        background-color: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    /* TESTIMONIAL STARS */
+    .testimonial-stars {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+    }
+
+    /* TESTIMONIAL TEXT */
+    .tesimonial-card p {
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        line-height: 1.7;
+    }
+
+    /* TESTIMONIAL CUSTOMER NAME */
+    .testimonial-card h3 {
+        margin-bottom: 0.35rem;
+        font-size: 1.1rem;
+    }
+
+    /* TESTIMONIAL CUSTOMER TYPE */
+    .testimonial-card span {
+        color: var(--text-color);
+        font-size: 0.9rem;
+    }
+
+    /* CALL TO ACTION SECTION */
+    .cta {
+        padding: 5rem 0;
+        background-color: var(--primary-color);
+        color: var(--white);
+        text-align: center;
+    }
+
+    /* CTA CONTENT */
+    .cta-content {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* CTA HEADING */
+    .cta-content h2 {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    /* CTA DESCRIPTION */
+    .cta-content p {
+        margin-bottom: 2rem;
+        color: var(--white);
+        line-height: 1.7;
+    }
+
+    /* CTA BUTTON */
+    .cta-content .btn-primary {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background-color: var(--white);
+        color: var(--primary-color);
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cta-content .btn-primary:hover {
+        background-color: var(--primary-dark);
+        color: var(--white);
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 4rem 0 2rem;
+        background-color: var(--text-color);
+        color: var(--white);
+    }
+
+    /* FOOTER GRID */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    /* FOOTER COLUMNS */
+    .footer-column h3 {
+        margin-bottom: 1.25rem;
+        color: var(--white);
+        font-size: 1.1rem;
+    }
+
+    .footer-column p {
+        margin-bottom: 1rem;
+        color: var(--white);
+        line-height: 1.7;
+    }
+
+    /* FOOTER LOGO */
+    .footer-column .logo {
+        display:inline-block;
+        margin-bottom: 1rem;
+        color:var(--white);
+        text-decoration: none;
+    }
+
+    /* FOOTER LINKS */
+    .footer-column ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-column li {
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-column a {
+        color:var(--white);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: var(--primary-color);
+    }
 
 
 
-} */
+
+
+
+
+
+
+
+
 
 
 

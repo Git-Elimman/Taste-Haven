@@ -1,11 +1,189 @@
+/* Taste Haven Responsive Styles */
+
+/* Applies these rules to screens that are 992px wide or smaller, this generally covers tablets and smaller laptops.
+Read each line of code when I'm done and remove unneccessary comments */
+
+@media (max-width:992px) {
+    /* changes the hero from two columns to one column */
+    .hero-container{
+        /* Creates a single column instead of two */
+        grid-template-columns: 1fr;
+        /* Centers the content horizontally */
+        text-align:center;
+   }
+   /* Limits the width of the hero paragraph */
+   .hero-text p{
+    /* Allows the paragraph to remain readable */
+    margin-right:auto
+   }
+   /* Centers the hero buttons */
+   .hero-buttons {
+    /* Places the buttons in the center. */
+    justify-content:center;
+   }
+   /* Makes the hero image smaller on tablets */
+   .hero-image img {
+    /* Prevents the image from becoming too large. */
+    max-width:500px;
+   }
+   /* Changes three meal columns into two columns. */
+   .meal-grid{
+    /*Creates two equal columns */
+    grid-template-columns: repeat(2, 1fr);
+   }
+   /* Changes the about section to one column. */
+   .about-grid {
+    /* Places the image and text above each other */
+    grid-template-columns: 1fr;
+   }
+   /* Centers the About section text */
+   .about-content{
+    /* aligns the text to the center */
+    text-align: center;
+   }
+
+   /* Changes three feature columns into two columns */
+   .features {
+    /* Creates two equal columns */
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   /* Changes the chef section to one column */
+   .chef-grid{
+   
+    /* Places the chef image and text vertically */
+    grid-template-columns: 1fr;
+   }
+   
+   /* Centers the chef section text */
+   .chef-content{
+    /* Aligns the text to the center. */
+    text-align: center;
+   }
+   /* Changes four statistics columns into two */
+   .stats{
+    /* Creates two equal columns */
+    grid-template-columns: repeat(2, 1fr);
+   }
+   /* Changes three testimonials into two columns */
+   .testimonials-grid{
+    /* Creates two equal columns. 2, 1fr means repeat 1fr two times */
+    grid-template-columns:repeat(2, 1fr);
+   }
+   /* Changes four footer columns into two */
+   .footer-grid{
+    /* Creates two equal columns */
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   /* FOOTER TABLET RESPONSIVENESS */
+   /* Changes the footer from four columns to two columns */
+   .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   /* CTA TABLET RESPONSIVE */
+   /* Makes the cta heading slightly smaller on Tablets */
+   .cta-content h2{
+    font-size: 2.2rem;
+   }
+
+   /* TESTIMONIALS -- TABLET RESPONSIVE */
+   /* Changes three testimonial cards into two columns */
+   .testimonial-grid {
+    grid-template-columns: repeat (2, 1fr);
+   }
+}
+
+   /* MOBILE RESPONSIVE STYLING */
+   @media (max-width: 768px) {
+    /* FEATURED MEALS */
+
+    .meal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FEATURES */
+    .features {
+        grid-template-columns:1fr;
+    }
+
+    /* CHEF'S MESSAGE */
+    .chef-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chef-content {
+        text-align:center;
+    }
+
+    /* STATISTICS */
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA */
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
+
+
+
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* TABLETS */
 @media(max-width:992px){
     .hero-content h1{
         font-size:3rem;
     }
-.stats-grid{
+
+    .stats-grid{
     grid-template-columns: repeat(2,1fr);
 }
+
 .chef-container,
 .testimonial-grid,
 .footer-grid{
@@ -13,23 +191,29 @@
     grid-template-columns:1fr 1fr;
 
 }
+
 }
 
+
 /* Mobile */
+
 @media(max-width:768px){
     .nav-container{
         flex-direction:column;
         gap: 20px;
     }
+
     .nav-links{
         flex-wrap:wrap;
         justify-content:center;
         gap:18px
     }
+
     .hero{
         text-align:center;
         height:80vh;
     }
+
     .hero-content{
         margin:auto
     }
@@ -42,28 +226,27 @@
     flex-direction:column;
     align-items:center;
 }
+
 .stats-grid{
     grid-template-columns:1fr;
 }
+
 .chef-container,
 .testimonial-grid,
 .footer-grid{
-
     grid-template-columns:1fr;
 
 }
 
 .chef{
-
     text-align:center;
 
 }
 
 .cta h2{
-
     font-size:2rem;
-
 }
+
 }
 
 
