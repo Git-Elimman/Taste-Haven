@@ -1,11 +1,25 @@
 /* Taste Haven Responsive Styles */
 
+@media (max-width: 1200px) {
+    .hero{
+        min-height: 480px;
+        padding: 50px 0;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+
 /* Applies these rules to screens that are 992px wide or smaller, this generally covers tablets and smaller laptops.
 Read each line of code when I'm done and remove unneccessary comments */
 
 @media (max-width:992px) {
     /* changes the hero from two columns to one column */
-    .hero-container{
+    .hero{
         /* Creates a single column instead of two */
         grid-template-columns: 1fr;
         /* Centers the content horizontally */
@@ -16,30 +30,56 @@ Read each line of code when I'm done and remove unneccessary comments */
     /* Allows the paragraph to remain readable */
     margin-right:auto
    }
+
+   .hero {
+    min-height: 430px;
+    padding: 45px 6%;
+   }
+
+   .container hero-content{
+    max-width: 580px;
+   }
+
+   .container hero-content h1{
+    font-size: 2.5rem;
+   }
+
+   .container hero-content p {
+    font-size: 1rem;
+   }
+
    /* Centers the hero buttons */
    .hero-buttons {
     /* Places the buttons in the center. */
     justify-content:center;
    }
+
    /* Makes the hero image smaller on tablets */
    .hero-image img {
     /* Prevents the image from becoming too large. */
     max-width:500px;
    }
+
    /* Changes three meal columns into two columns. */
    .meal-grid{
     /*Creates two equal columns */
     grid-template-columns: repeat(2, 1fr);
    }
+
    /* Changes the about section to one column. */
    .about-grid {
     /* Places the image and text above each other */
     grid-template-columns: 1fr;
    }
+
    /* Centers the About section text */
    .about-content{
     /* aligns the text to the center */
     text-align: center;
+   }
+
+   .values-grid {
+    grid-template-columns: repeat(2, 1fr);
    }
 
    /* Changes three feature columns into two columns */
@@ -60,46 +100,99 @@ Read each line of code when I'm done and remove unneccessary comments */
     /* Aligns the text to the center. */
     text-align: center;
    }
+
    /* Changes four statistics columns into two */
    .stats{
     /* Creates two equal columns */
     grid-template-columns: repeat(2, 1fr);
    }
+
    /* Changes three testimonials into two columns */
    .testimonials-grid{
     /* Creates two equal columns. 2, 1fr means repeat 1fr two times */
     grid-template-columns:repeat(2, 1fr);
    }
+
    /* Changes four footer columns into two */
    .footer-grid{
     /* Creates two equal columns */
     grid-template-columns: repeat(2, 1fr);
    }
 
-   /* FOOTER TABLET RESPONSIVENESS */
-   /* Changes the footer from four columns to two columns */
-   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+   /* ABOUT STORY TABLET */
+   /* .about-story-content {
+    gap: 2.5rem;
    }
 
-   /* CTA TABLET RESPONSIVE */
-   /* Makes the cta heading slightly smaller on Tablets */
-   .cta-content h2{
-    font-size: 2.2rem;
+   .about-story-image img {
+    height: 400px;
    }
 
-   /* TESTIMONIALS -- TABLET RESPONSIVE */
-   /* Changes three testimonial cards into two columns */
-   .testimonial-grid {
-    grid-template-columns: repeat (2, 1fr);
-   }
-}
-
-   /* MOBILE RESPONSIVE STYLING */
+   .about-story-text h2 {
+    font-size: 2rem;
+   } */
+}   
+  
+ /* FOOTER TABLET RESPONSIVENESS */
    @media (max-width: 768px) {
-    /* FEATURED MEALS */
+
+    .hero {
+        min-height: 400px;
+        padding: 40px 0;
+    }
+
+    .container hero-content {
+        max-width: 100%;
+    }
+
+    .container hero-content h1 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+
+    .container hero-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
 
     .meal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-story {
+        padding: 60px 0;
+    }
+
+    .about-story-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-story-image img {
+        height: 350px;
+    }
+
+    .about-story-text {
+        max-width: 100%;
+    }
+
+    .about-story-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-story-text p {
+        font-size: 0.95rem;
+    }
+
+    .about-values {
+        padding: 60px 0;
+    }
+
+    .values-grid {
         grid-template-columns: 1fr;
     }
 
@@ -137,116 +230,20 @@ Read each line of code when I'm done and remove unneccessary comments */
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
-
-
-
-
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* TABLETS */
-@media(max-width:992px){
-    .hero-content h1{
-        font-size:3rem;
+@media (max-width: 480px) {
+    .hero {
+        min-height: 380px;
+        padding: 40px 5%;
     }
 
-    .stats-grid{
-    grid-template-columns: repeat(2,1fr);
-}
-
-.chef-container,
-.testimonial-grid,
-.footer-grid{
-
-    grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-
-/* Mobile */
-
-@media(max-width:768px){
-    .nav-container{
-        flex-direction:column;
-        gap: 20px;
+    .container hero-content h1 {
+        font-size: 1.9rem;
     }
 
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:18px
+    .container hero-content  {
+        font-size: 0.9rem;
     }
-
-    .hero{
-        text-align:center;
-        height:80vh;
-    }
-
-    .hero-content{
-        margin:auto
-    }
-
-    .hero-content h1{
-        font-size:2.4rem;
-    }
-
-.hero--buttons{
-    flex-direction:column;
-    align-items:center;
 }
-
-.stats-grid{
-    grid-template-columns:1fr;
-}
-
-.chef-container,
-.testimonial-grid,
-.footer-grid{
-    grid-template-columns:1fr;
-
-}
-
-.chef{
-    text-align:center;
-
-}
-
-.cta h2{
-    font-size:2rem;
-}
-
-}
-
 
